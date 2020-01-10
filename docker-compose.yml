@@ -17,4 +17,11 @@ services:
       - '/srv/gitlab/config:/etc/gitlab'
       - '/srv/gitlab/logs:/var/log/gitlab'
       - '/srv/gitlab/data:/var/opt/gitlab'
-     
+    
+    gitlab-runner:
+    image: 'gitlab/gitlab-runner:latest'
+    restart: always
+    container_name: gitlab_runner
+    volumes:
+      - './gitlab-runner/config:/etc/gitlab-runner'
+      - '/var/run/docker.sock:/var/run/docker.sock' 
