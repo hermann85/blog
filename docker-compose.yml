@@ -24,4 +24,7 @@ services:
     container_name: gitlab_runner
     volumes:
       - './gitlab-runner/config:/etc/gitlab-runner'
-      - '/var/run/docker.sock:/var/run/docker.sock' 
+      - '/var/run/docker.sock:/var/run/docker.sock'
+      
+      - LETSENCRYPT_HOST=gitlab.domain.com
+      - LETSENCRYPT_EMAIL=hermanndzouavele@gmail.comi 
